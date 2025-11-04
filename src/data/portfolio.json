@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "name": "Pelican",
+    "stage": "Pre-Series",
+    "status": "Invested by 14U",
+    "color": "from-brand-pink to-brand-rose"
+  },
+  {
+    "id": "2",
+    "name": "Mark AI",
+    "stage": "Seed",
+    "status": "Invested by 14U",
+    "color": "from-purple-600 to-indigo-600"
+  },
+  {
+    "id": "3",
+    "name": "Plugzmart",
+    "stage": "Pre-Series",
+    "status": "Currently Raising",
+    "color": "from-blue-600 to-cyan-500"
+  },
+  {
+    "id": "4",
+    "name": "XO Labs",
+    "stage": "Seed",
+    "status": "Currently Raising",
+    "color": "from-indigo-500 to-blue-500"
+  },
+  {
+    "id": "5",
+    "name": "Lumin",
+    "stage": "Seed",
+    "status": "Currently Raising",
+    "color": "from-teal-500 to-emerald-500"
+  }
+]
