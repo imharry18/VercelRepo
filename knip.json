@@ -1,0 +1,8 @@
+{
+  "next": {
+    "entry": ["src/app/**/{page,layout,not-found,loading,error}.{js,jsx,ts,tsx}"]
+  },
+  "paths": {
+    "@/*": ["./src/*"]
+  }
+}
