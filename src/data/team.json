@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "name": "Shashank Umashankar",
+    "role": "Managing Partner & Founder",
+    "bio": "Founder of 14U Capital. Leads investor relations, deal strategy, and firm direction — with a relentless focus on helping founders navigate the earliest and most critical stages of their journey.",
+    "photo": "shashank-umashankar.jpeg",
+    "linkedin": "https://www.linkedin.com/in/shashankumashankar/",
+    "accent": "bg-brand-pink",
+    "borderAccent": "border-l-brand-pink"
+  },
+  {
+    "id": "2",
+    "name": "Depesh Vyas",
+    "role": "General Partner & Investor",
+    "bio": "Oversees operations, execution, and internal strategy. Focused on scaling portfolio companies with hands-on operational support and a sharp eye for growth inflection points.",
+    "photo": "depesh-vyas.jpeg",
+    "linkedin": "https://www.linkedin.com/in/depeshvyas/",
+    "accent": "bg-indigo-600",
+    "borderAccent": "border-l-indigo-600"
+  }
+]
