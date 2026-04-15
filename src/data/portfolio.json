@@ -3,35 +3,102 @@
     "id": "1",
     "name": "Pelican",
     "stage": "Pre-Series",
+    "sector": "Furniture Tech",
+    "description": "Pelican is revolutionizing the furniture industry with smart, tech-integrated designs that adapt to modern living spaces.",
     "status": "Invested by 14U",
-    "color": "from-brand-pink to-brand-rose"
+    "logo": "pelican.jpeg",
+    "color": "from-brand-pink to-brand-rose",
+    "password": "pelican",
+    "tasks": [],
+    "updates": []
   },
   {
     "id": "2",
     "name": "Mark AI",
     "stage": "Seed",
+    "sector": "Enterprise Tech",
+    "description": "Mark AI provides advanced enterprise solutions leveraging artificial intelligence to streamline operations and enhance productivity.",
     "status": "Invested by 14U",
-    "color": "from-purple-600 to-indigo-600"
+    "logo": "",
+    "color": "from-purple-600 to-indigo-600",
+    "password": "markai",
+    "tasks": [],
+    "updates": []
   },
   {
     "id": "3",
     "name": "Plugzmart",
     "stage": "Pre-Series",
+    "sector": "Ems Platform",
+    "description": "Plugzmart is a leading EMS platform that simplifies electronic manufacturing services for global hardware startups.",
     "status": "Currently Raising",
-    "color": "from-blue-600 to-cyan-500"
+    "logo": "",
+    "color": "from-blue-600 to-cyan-500",
+    "password": "plugzmart-2026",
+    "tasks": [],
+    "updates": []
   },
   {
     "id": "4",
     "name": "XO Labs",
     "stage": "Seed",
+    "sector": "Med / Health tech",
+    "description": "XO Labs is at the forefront of medical technology, developing innovative health-tech solutions for improved patient outcomes.",
     "status": "Currently Raising",
-    "color": "from-indigo-500 to-blue-500"
+    "logo": "",
+    "color": "from-indigo-500 to-blue-500",
+    "password": "xo-labs-updates",
+    "tasks": [],
+    "updates": []
   },
   {
     "id": "5",
     "name": "Lumin",
     "stage": "Seed",
+    "sector": "Space tech",
+    "description": "Lumin is pioneering space technology with next-generation satellite components and deep-space communication systems.",
     "status": "Currently Raising",
-    "color": "from-teal-500 to-emerald-500"
+    "logo": "",
+    "color": "from-teal-500 to-emerald-500",
+    "password": "lumin-space",
+    "tasks": [],
+    "updates": []
+  },
+  {
+    "id": "1778330319473",
+    "name": "New Company",
+    "stage": "PrePost",
+    "sector": "ForTech",
+    "description": "hellohereiamharry",
+    "status": "Hey I am harry",
+    "logo": "hello.jpgpng",
+    "color": "from-indigo-500 to-blue-500",
+    "password": "heyharry",
+    "updates": [
+      {
+        "content": "hiam ahfodsaj",
+        "sender": "Admin",
+        "id": "1778330403891",
+        "timestamp": "2026-05-09T12:40:03.891Z"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "dfadsfsd",
+        "date": "2026-05-11",
+        "status": "in-progress",
+        "id": "1778330409379"
+      }
+    ]
+  },
+  {
+    "id": "1778330482309",
+    "name": "New Company",
+    "stage": "Seed",
+    "sector": "Tech",
+    "description": "",
+    "status": "Currently Raising",
+    "logo": "",
+    "color": "from-brand-pink to-brand-rose"
   }
 ]
