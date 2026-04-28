@@ -40,7 +40,7 @@ export default function Navbar() {
           {/* Tagline */}
           <div className="hidden sm:block">
             <div className="text-[9px] lg:text-[10px] uppercase tracking-[0.2em] font-semibold animate-shimmer bg-gradient-to-r from-slate-400 via-slate-800 to-slate-400 bg-[length:200%_100%] bg-clip-text text-transparent">
-              Backing Founders
+              BACKING FOUNDERS
             </div>
           </div>
         </Link>

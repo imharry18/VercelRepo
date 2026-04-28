@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Card from "@/components/ui/Card";
 import TiltCard from "@/components/ui/TiltCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -13,7 +14,12 @@ export default function Portfolio({ showHeader = true }) {
     fetch("/api/portfolio")
       .then((res) => res.json())
       .then((data) => {
-        setPortfolio(data);
+        if (Array.isArray(data)) {
+          setPortfolio(data);
+        } else {
+          console.error("Invalid portfolio response:", data);
+          setPortfolio([]);
+        }
         setLoading(false);
       })
       .catch((err) => {
@@ -84,10 +90,20 @@ export default function Portfolio({ showHeader = true }) {
 
                     <div className="relative z-10 flex-grow">
                       <div className="flex items-center space-x-4 mb-8">
-                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${company.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                          <span className="font-bold text-white text-lg">
-                            {company.name.charAt(0)}
-                          </span>
+                        <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${company.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 overflow-hidden`}>
+                          {company.logo ? (
+                            <Image
+                              src={company.logo.startsWith("http") || company.logo.startsWith("/") ? company.logo : `/portfolio/${company.logo}`}
+                              alt={company.name}
+                              width={48}
+                              height={48}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <span className="font-bold text-white text-lg">
+                              {company.name.charAt(0)}
+                            </span>
+                          )}
                         </div>
                         <div>
                           <h3 className="text-2xl font-extrabold text-[#0B132B] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0B132B] group-hover:to-brand-pink transition-all duration-500 tracking-tight">
@@ -96,27 +112,47 @@ export default function Portfolio({ showHeader = true }) {
                         </div>
                       </div>
 
-                      <div className="space-y-1 mb-8">
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Stage</p>
-                        <p className="text-lg font-bold text-slate-800">{company.stage}</p>
+                      <div className="grid grid-cols-2 gap-6 mb-8">
+                        <div className="space-y-1">
+                          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Stage</p>
+                          <p className="text-lg font-bold text-slate-800">{company.stage}</p>
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sector</p>
+                          <p className="text-lg font-bold text-slate-800 line-clamp-1">{company.sector}</p>
+                        </div>
                       </div>
+
+                      {company.description && (
+                        <p className="text-sm text-slate-600 leading-relaxed mb-8 line-clamp-3">
+                          {company.description}
+                        </p>
+                      )}
                     </div>
 
                     {/* Status Indicator (Premium Style) */}
-                    <div className="relative z-10 mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Status</span>
+                    <div className="relative z-10 mt-auto pt-6 border-t border-slate-100 flex items-center justify-between gap-4">
                       <div className="flex items-center space-x-2 bg-slate-50 px-4 py-2 rounded-full border border-slate-100 group-hover:bg-white group-hover:shadow-sm transition-all duration-300">
                         <span className="relative flex h-2.5 w-2.5">
-                          {/* Pulse Effect for 'Currently Raising' */}
                           {!isInvested && (
                             <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isInvested ? 'bg-emerald-400' : 'bg-brand-pink'}`}></span>
                           )}
                           <span className={`relative inline-flex rounded-full h-2.5 w-2.5 ${isInvested ? 'bg-emerald-500' : 'bg-brand-pink'}`}></span>
                         </span>
-                        <span className={`text-xs font-bold uppercase tracking-wider ${isInvested ? 'text-emerald-700' : 'text-brand-pink'}`}>
+                        <span className={`text-[10px] font-bold uppercase tracking-wider ${isInvested ? 'text-emerald-700' : 'text-brand-pink'}`}>
                           {company.status}
                         </span>
                       </div>
+
+                      <a 
+                        href={`/portfolio/${company.id}`}
+                        className="text-xs font-bold text-[#0B132B] hover:text-white border border-slate-200 hover:border-brand-pink hover:bg-brand-pink px-6 py-3 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-brand-pink/20 flex items-center gap-2 group/btn"
+                      >
+                        Portal Access
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </a>
                     </div>
 
                   </Card>

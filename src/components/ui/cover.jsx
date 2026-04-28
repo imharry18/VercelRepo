@@ -142,7 +142,7 @@ export const Cover = ({
   );
 };
 
-export const Beam = ({
+const Beam = ({
   className,
   delay,
   duration,
@@ -197,7 +197,7 @@ export const Beam = ({
   );
 };
 
-export const CircleIcon = ({
+const CircleIcon = ({
   className,
   delay
 }) => {

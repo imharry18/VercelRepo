@@ -42,7 +42,7 @@ export default function Hero() {
         {/* Headline */}
         <div className="mb-6 space-y-2">
           <h1 className="text-6xl md:text-8xl font-extrabold text-[#0B132B] tracking-tight leading-tight">
-            Backing Founders
+            BACKING FOUNDERS
           </h1>
           <div className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-[#9B6B9E] to-blue-600 pb-2">
             Building the Future
@@ -50,7 +50,7 @@ export default function Hero() {
         </div>
 
         <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-10 font-medium tracking-wide">
-          We partner with ambitious founders across early stages to help them raise capital, scale operations, and unlock strategic growth.
+          We partner with ambitious founders from Seed to Series A/B to help them raise capital, scale operations, and unlock strategic growth.
         </p>
 
         {/* Dual CTA */}
