@@ -28,16 +28,17 @@ export default function HomePortfolio() {
   return (
     <section id="portfolio-preview" className="relative py-24 bg-[#fbf6f3] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-
         <ScrollReveal>
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
-            <div className="flex items-center space-x-4 mb-2">
-              <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-brand-pink" />
-              <span className="text-xs font-bold text-brand-pink uppercase tracking-[0.2em]">Deal Flow</span>
-              <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-brand-pink" />
+          <div className="flex flex-col items-center text-center mb-24 space-y-4">
+            <div className="flex items-center space-x-3 mb-2">
+              <span className="w-8 h-[1px] bg-brand-pink" />
+              <span className="text-[10px] font-bold text-brand-pink uppercase tracking-[0.4em]">Deal Flow</span>
+              <span className="w-8 h-[1px] bg-brand-pink" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#0B132B] tracking-tight">Portfolio Preview</h2>
-            <p className="text-lg text-slate-600 max-w-xl mx-auto font-medium leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-black text-[#0B132B] tracking-tight leading-none">
+              Portfolio <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-600">Preview</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-xl mx-auto font-medium leading-relaxed pt-2">
               We back category-defining companies led by visionary founders.
             </p>
           </div>

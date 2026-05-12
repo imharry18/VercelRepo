@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef } from "react";
 import { motion } from "motion/react"; 
@@ -92,20 +92,20 @@ export default function Contact({ showHeader = true }) {
           <div className="lg:col-span-2 space-y-12 pt-4">
             {showHeader && (
             <ScrollReveal>
-              <div>
-                <div className="mb-6 flex flex-col items-start">
-                  <TextGenerateEffect 
-                    words="Raising Capital?" 
-                    className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight"
-                  />
-                  <div className="mt-2">
-                    <TextGenerateEffect 
-                      words="Let’s Talk." 
-                      className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-600 pb-1"
-                    />
-                  </div>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-3 mb-2">
+                  <span className="w-12 h-[1px] bg-brand-pink" />
+                  <span className="text-[10px] font-bold text-brand-pink uppercase tracking-[0.4em]">Connect</span>
                 </div>
-                <p className="text-slate-600 text-lg leading-relaxed max-w-sm">
+                <div>
+                  <h2 className="text-6xl md:text-7xl font-black text-[#0B132B] tracking-tight leading-[0.95] mb-2">
+                    Raising <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-600">Capital?</span>
+                  </h2>
+                  <h2 className="text-6xl md:text-7xl font-black text-[#0B132B] tracking-tight leading-[0.95]">
+                    Let’s Talk.
+                  </h2>
+                </div>
+                <p className="text-xl text-slate-600 leading-relaxed font-medium max-w-sm pt-4">
                   Whether you're exploring a partnership or ready to submit your pitch deck, our team is directly accessible.
                 </p>
               </div>

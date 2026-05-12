@@ -11,42 +11,44 @@ export default function Footer() {
       <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-brand-pink/10 blur-[120px] rounded-full pointer-events-none mix-blend-multiply" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="mb-16">
+          <div className="flex items-center space-x-3">
+            <div className="relative flex items-center w-36 h-10 lg:w-44 lg:h-12">
+              <Image
+                src="/logo-14u-capital.png"
+                alt="14U Capital Logo"
+                width={400}
+                height={200}
+                className="object-contain w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-10">
 
-          {/* Left Column: Brand & Contact Info */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="flex items-center space-x-3">
-              <div className="relative flex items-center w-36 h-10 lg:w-44 lg:h-12">
-                <Image
-                  src="/logo-14u-capital.png"
-                  alt="14U Capital Logo"
-                  width={400}
-                  height={200}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-            </div>
-
+          {/* Left Column: Contact Info */}
+          <div className="lg:col-span-5 space-y-10">
             {/* Address */}
             <div className="text-slate-600 text-sm leading-relaxed">
-              <p className="font-semibold text-slate-900 mb-1">Head Office</p>
-              <p>Regus World Trade Center</p>
-              <p>Unit 2201A, 22nd Floor</p>
-              <p>Brigade Gateway Campus</p>
-              <p>Bangalore 560055 | India</p>
+              <p className="font-bold text-[#0B132B] mb-2 uppercase tracking-widest text-[10px]">Head Office</p>
+              <p className="font-medium">Regus World Trade Center</p>
+              <p className="opacity-80">Unit 2201A, 22nd Floor</p>
+              <p className="opacity-80">Brigade Gateway Campus</p>
+              <p className="opacity-80">Bangalore 560055 | India</p>
             </div>
 
             {/* Contact Details */}
-            <div className="flex flex-col space-y-4 text-sm">
+            <div className="flex flex-col space-y-6 text-sm">
               <div>
-                <span className="block text-slate-500 mb-1 text-xs uppercase tracking-widest font-semibold">General & Partnerships</span>
-                <a href="mailto:Hello@14ucapital.in" className="text-slate-900 font-medium hover:text-brand-pink transition-colors">
+                <span className="block text-slate-500 mb-1 text-[10px] uppercase tracking-widest font-bold">General & Partnerships</span>
+                <a href="mailto:Hello@14ucapital.in" className="text-[#0B132B] font-semibold hover:text-brand-pink transition-colors">
                   Hello@14ucapital.in
                 </a>
               </div>
               <div>
-                <span className="block text-slate-500 mb-1 text-xs uppercase tracking-widest font-semibold">Fundraising Services</span>
-                <a href="mailto:Investments@14ucapital.in" className="text-slate-900 font-medium hover:text-brand-pink transition-colors">
+                <span className="block text-slate-500 mb-1 text-[10px] uppercase tracking-widest font-bold">Fundraising Services</span>
+                <a href="mailto:Investments@14ucapital.in" className="text-[#0B132B] font-semibold hover:text-brand-pink transition-colors">
                   Investments@14ucapital.in
                 </a>
               </div>
@@ -58,22 +60,22 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-slate-900 font-semibold mb-6">Quick Links</h4>
+              <h4 className="text-[#0B132B] font-bold mb-6 uppercase tracking-widest text-[10px]">Quick Links</h4>
               <ul className="space-y-4 text-sm text-slate-600">
-                <li><Link href="/" className="hover:text-brand-pink transition-colors">Home</Link></li>
-                <li><Link href="/services" className="hover:text-brand-pink transition-colors">Services</Link></li>
-                <li><Link href="/portfolio" className="hover:text-brand-pink transition-colors">Portfolio</Link></li>
-                <li><Link href="/team" className="hover:text-brand-pink transition-colors">Team</Link></li>
-                <li><Link href="/contact" className="hover:text-brand-pink transition-colors">Contact</Link></li>
+                <li><Link href="/" className="hover:text-brand-pink transition-colors font-medium">Home</Link></li>
+                <li><Link href="/services" className="hover:text-brand-pink transition-colors font-medium">Services</Link></li>
+                <li><Link href="/portfolio" className="hover:text-brand-pink transition-colors font-medium">Portfolio</Link></li>
+                <li><Link href="/team" className="hover:text-brand-pink transition-colors font-medium">Team</Link></li>
+                <li><Link href="/contact" className="hover:text-brand-pink transition-colors font-medium">Contact</Link></li>
               </ul>
             </div>
 
             {/* Social */}
             <div>
-              <h4 className="text-slate-900 font-semibold mb-6">Connect</h4>
+              <h4 className="text-[#0B132B] font-bold mb-6 uppercase tracking-widest text-[10px]">Connect</h4>
               <ul className="space-y-4 text-sm text-slate-600">
                 <li>
-                  <a href="mailto:hello@14ucapital.in" className="hover:text-brand-pink transition-colors">
+                  <a href="mailto:hello@14ucapital.in" className="hover:text-brand-pink transition-colors font-medium">
                     Send Email
                   </a>
                 </li>
@@ -82,7 +84,7 @@ export default function Footer() {
                     href="https://www.linkedin.com/company/14u-capital/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-blue-500 transition-colors"
+                    className="hover:text-blue-500 transition-colors font-medium"
                   >
                     LinkedIn
                   </a>
@@ -92,11 +94,11 @@ export default function Footer() {
 
             {/* Legal */}
             <div>
-              <h4 className="text-slate-900 font-semibold mb-6">Legal</h4>
+              <h4 className="text-[#0B132B] font-bold mb-6 uppercase tracking-widest text-[10px]">Legal</h4>
               <ul className="space-y-4 text-sm text-slate-600">
-                <li><Link href="/terms" className="hover:text-brand-pink transition-colors">Terms of Service</Link></li>
-                <li><Link href="/privacy" className="hover:text-brand-pink transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/cookies" className="hover:text-brand-pink transition-colors">Cookie Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-brand-pink transition-colors font-medium">Terms of Service</Link></li>
+                <li><Link href="/privacy" className="hover:text-brand-pink transition-colors font-medium">Privacy Policy</Link></li>
+                <li><Link href="/cookies" className="hover:text-brand-pink transition-colors font-medium">Cookie Policy</Link></li>
               </ul>
             </div>
 

@@ -25,16 +25,16 @@ export default function Team({ showHeader = true }) {
         {/* Section Header */}
         {showHeader && (
           <ScrollReveal>
-            <div className="flex flex-col items-center text-center mb-20 space-y-4">
-              <div className="flex items-center space-x-4 mb-2">
-                <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-brand-pink" />
-                <span className="text-xs font-bold text-brand-pink uppercase tracking-[0.2em]">Leadership</span>
-                <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-brand-pink" />
+            <div className="flex flex-col items-center text-center mb-24 space-y-4">
+              <div className="flex items-center space-x-3 mb-2">
+                <span className="w-8 h-[1px] bg-brand-pink" />
+                <span className="text-[10px] font-bold text-brand-pink uppercase tracking-[0.4em]">Leadership</span>
+                <span className="w-8 h-[1px] bg-brand-pink" />
               </div>
-              <h2 className="text-5xl md:text-6xl font-extrabold text-[#0B132B] tracking-tight">
-                Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-600">Team.</span>
+              <h2 className="text-5xl md:text-6xl font-black text-[#0B132B] tracking-tight leading-none">
+                Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-purple-600">Team</span>
               </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed mt-4">
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed pt-2">
                 Operators and strategists dedicated to bridging the gap between ambition and capital.
               </p>
             </div>
