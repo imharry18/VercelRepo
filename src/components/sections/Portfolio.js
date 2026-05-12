@@ -146,7 +146,7 @@ export default function Portfolio({ showHeader = true }) {
 
                       <a 
                         href={`/portfolio/${company.id}`}
-                        className="text-xs font-bold text-[#0B132B] hover:text-white border border-slate-200 hover:border-brand-pink hover:bg-brand-pink px-6 py-3 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-brand-pink/20 flex items-center gap-2 group/btn"
+                        className="text-xs font-bold text-[#0B132B] hover:text-white border border-slate-200 hover:border-brand-pink hover:bg-brand-pink px-6 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-brand-pink/20 flex items-center gap-2 group/btn"
                       >
                         Portal Access
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform">

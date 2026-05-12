@@ -123,7 +123,7 @@ export default function HomePortfolio() {
                     
                     <a 
                       href={`/portfolio/${company.id}`}
-                      className="text-[10px] font-bold text-slate-600 hover:text-white border border-slate-200 hover:border-brand-pink hover:bg-brand-pink px-4 py-2 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-brand-pink/20 whitespace-nowrap flex items-center gap-1.5 group/btn"
+                      className="text-[10px] font-bold text-slate-600 hover:text-white border border-slate-200 hover:border-brand-pink hover:bg-brand-pink px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md hover:shadow-brand-pink/20 whitespace-nowrap flex items-center gap-1.5 group/btn"
                     >
                       View Updates
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-2.5 h-2.5 group-hover/btn:translate-x-0.5 transition-transform">

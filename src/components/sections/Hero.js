@@ -68,7 +68,7 @@ export default function Hero() {
               Send Pitch Deck
             </Button>
           
-          <Button href="#services" variant="secondary" size="lg" className="w-full sm:w-auto min-w-[240px] text-lg py-5 bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 transition-all duration-500 rounded-2xl shadow-sm hover:shadow-md">
+          <Button href="/services" variant="secondary" size="lg" className="w-full sm:w-auto min-w-[240px] text-lg py-5 bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 transition-all duration-500 rounded-2xl shadow-sm hover:shadow-md">
             Explore Services
           </Button>
         </div>
