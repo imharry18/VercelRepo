@@ -83,7 +83,7 @@ export default function Services({ showHeader = true }) {
               className="relative group h-full"
             >
               <TiltCard className="h-full">
-                <Card className="relative min-h-[450px] p-0 flex flex-col h-full group-hover:border-brand-pink/20 transition-all duration-500 shadow-2xl bg-slate-900 border-none overflow-hidden rounded-[2.5rem]">
+                <Card className="relative min-h-[380px] p-0 flex flex-col h-full group-hover:border-brand-pink/20 transition-all duration-500 shadow-2xl bg-slate-900 border-none overflow-hidden rounded-[2.5rem]">
                   
                   {/* Background Image Area */}
                   <div className="absolute inset-0 z-0">

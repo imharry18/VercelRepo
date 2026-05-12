@@ -79,7 +79,7 @@ export default function HomeVerticals() {
           {verticals.map((v, i) => (
             <ScrollReveal key={i} delay={i * 0.1} className="h-full">
               <TiltCard className="h-full">
-                <div className="relative h-[450px] flex flex-col group rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 border border-slate-200/50">
+                <div className="relative h-[380px] flex flex-col group rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 border border-slate-200/50">
                   
                   {/* Background Image Area */}
                   <div className="absolute inset-0 z-0">
