@@ -13,7 +13,8 @@ export default function Services({ showHeader = true }) {
         "Narrative building & positioning",
         "Deal execution support"
       ],
-      color: "from-brand-pink to-brand-rose"
+      color: "from-brand-pink to-brand-rose",
+      image: "/verticals/fundraising.png"
     },
     {
       title: "Collateral Documentation & Valuation",
@@ -23,7 +24,8 @@ export default function Services({ showHeader = true }) {
         "Valuation (DCF, VC method, comps)",
         "Investor-ready materials"
       ],
-      color: "from-blue-600 to-cyan-500"
+      color: "from-blue-600 to-cyan-500",
+      image: "/verticals/documentation.png"
     },
     {
       title: "M&A Advisory",
@@ -32,7 +34,8 @@ export default function Services({ showHeader = true }) {
         "Strategic partnerships",
         "Exit planning"
       ],
-      color: "from-purple-600 to-indigo-600"
+      color: "from-purple-600 to-indigo-600",
+      image: "/verticals/ma.png"
     },
     {
       title: "Operations as a Service",
@@ -41,27 +44,20 @@ export default function Services({ showHeader = true }) {
         "Growth and scaling frameworks",
         "Founder office support"
       ],
-      color: "from-indigo-500 to-blue-500"
+      color: "from-indigo-500 to-blue-500",
+      image: "/verticals/operations.png"
     }
   ];
 
   return (
-    <section id="services" className="relative min-h-[90vh] py-24 overflow-hidden flex flex-col justify-center">
+    <section id="services" className="relative min-h-[90vh] py-24 overflow-hidden flex flex-col justify-center bg-[#fbf6f3]">
       
-      {/* Ambient Background Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-[25rem] h-[25rem] bg-brand-pink/3 blur-[120px] rounded-full mix-blend-multiply" />
-        <div className="absolute bottom-[10%] right-[5%] w-[30rem] h-[30rem] bg-blue-900/3 blur-[120px] rounded-full mix-blend-multiply" />
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
         {showHeader && (
         <ScrollReveal>
           <div className="mb-20 text-center">
-
-            
             <div className="flex flex-col items-center justify-center mb-6 space-y-2">
               <h2 className="text-5xl md:text-6xl font-extrabold text-[#0B132B] tracking-tight">
                 How We Work
@@ -71,7 +67,7 @@ export default function Services({ showHeader = true }) {
               </div>
             </div>
 
-            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto font-medium">
               We provide highly focused advisory services designed to convert opportunities into definitive outcomes.
             </p>
           </div>
@@ -79,7 +75,7 @@ export default function Services({ showHeader = true }) {
         )}
 
         {/* Services Grid (4 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           {services.map((service, i) => (
             <ScrollReveal 
               key={i} 
@@ -87,41 +83,43 @@ export default function Services({ showHeader = true }) {
               className="relative group h-full"
             >
               <TiltCard className="h-full">
-                <div 
-                  className={`
-                    absolute inset-0 
-                    bg-gradient-to-br ${service.color} 
-                    blur-[60px] 
-                    opacity-0 group-hover:opacity-10 
-                    transition-opacity duration-700 
-                    -z-10
-                  `} 
-                />
-
-                <Card className="relative p-10 flex flex-col h-full group-hover:border-brand-pink/20 transition-all duration-500 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl bg-white border-slate-100 overflow-hidden">
+                <Card className="relative min-h-[450px] p-0 flex flex-col h-full group-hover:border-brand-pink/20 transition-all duration-500 shadow-2xl bg-slate-900 border-none overflow-hidden rounded-[2.5rem]">
                   
+                  {/* Background Image Area */}
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-[2s] ease-out"
+                    />
+                    {/* Deep Gradient Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-[#0B132B]/80 to-transparent opacity-100" />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-1000`} />
+                  </div>
+
+                  {/* Content Area */}
+                  <div className="relative z-10 p-10 md:p-12 flex flex-col h-full mt-auto">
+                    <div className="mb-6">
+                      <div className={`w-12 h-1.5 bg-gradient-to-r ${service.color} rounded-full mb-6 opacity-90`} />
+                      <h3 className="text-3xl md:text-4xl font-black text-white tracking-tighter leading-tight drop-shadow-lg">
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    <ul className="space-y-4">
+                      {service.items.map((item, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <div className={`mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color}`} />
+                          <span className="text-white/80 text-base font-medium drop-shadow-md">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
                   {/* Large Background Number */}
-                  <div className="absolute -right-4 -bottom-4 text-9xl font-black text-slate-50 opacity-50 pointer-events-none group-hover:text-brand-pink/5 transition-colors duration-500">
+                  <div className="absolute -right-4 -top-4 text-9xl font-black text-white/5 pointer-events-none group-hover:text-brand-pink/10 transition-colors duration-700 uppercase tracking-tighter">
                     0{i + 1}
                   </div>
-
-                  <div className="mb-8 border-b border-slate-100 pb-6 relative z-10">
-                    <div className={`w-10 h-1 bg-gradient-to-r ${service.color} rounded-full mb-6 opacity-80`} />
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-[#0B132B] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#0B132B] group-hover:to-brand-pink transition-all duration-500 tracking-tight">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  <ul className="space-y-4">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start space-x-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-pink mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-slate-600 text-base">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </Card>
               </TiltCard>
             </ScrollReveal>
