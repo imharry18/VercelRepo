@@ -11,7 +11,7 @@ export default function Hero() {
         <img 
           src="/hero-bg.png" 
           alt="Hero Background" 
-          className="w-full h-full object-cover opacity-80 scale-125 object-[40%_center]"
+          className="w-full h-full object-cover opacity-80 scale-125 object-[30%_center]"
           style={{
             WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 30%, black 100%)',
             maskImage: 'radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.2) 30%, black 100%)'
@@ -22,11 +22,11 @@ export default function Hero() {
       </div>
 
       {/* Premium Business Grid Layer - Light Version */}
-      <div className="absolute inset-0 z-[1] opacity-[0.2]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808020_1px,transparent_1px),linear-gradient(to_bottom,#80808020_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+      <div className="absolute inset-0 z-[1] opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_20%,transparent_100%)]"></div>
       </div>
 
-      {/* Sparkles Particle Data Effect - Darker particles for light theme */}
+      {/* Interactive Particle Layer */}
       <div className="absolute inset-0 w-full h-full z-[2] pointer-events-none [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_60%,transparent_100%)]">
         <SparklesCore
           id="hero-particles"
@@ -53,7 +53,7 @@ export default function Hero() {
           <h1 className="text-6xl md:text-9xl font-black text-[#0B132B] tracking-tighter leading-[0.85]">
             BACKING <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#0B132B] to-[#0B132B]">FOUNDERS</span>
           </h1>
-          <div className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-purple-600 to-blue-700 pb-2">
+          <div className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-brand-pink pb-2">
             Building the Future
           </div>
         </div>
