@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Card from "@/components/ui/Card";
 import TiltCard from "@/components/ui/TiltCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -119,6 +120,17 @@ export default function Focus() {
                       <p className="text-base md:text-lg text-white/80 leading-relaxed font-medium max-w-md drop-shadow-md">
                         {area.desc}
                       </p>
+
+                      <Link href="/services" className="pt-2 flex items-center group/btn cursor-pointer">
+                        <div className={`flex items-center justify-center w-10 h-10 rounded-full border border-white/40 bg-white/10 backdrop-blur-md group-hover/btn:w-32 group-hover/btn:bg-white group-hover/btn:border-white transition-all duration-500 overflow-hidden shadow-lg relative`}>
+                          <span className="absolute left-10 opacity-0 group-hover/btn:opacity-100 whitespace-nowrap text-slate-900 font-black text-[10px] uppercase tracking-widest transition-all duration-500">
+                            Learn More
+                          </span>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-4 h-4 text-white group-hover/btn:text-slate-900 group-hover/btn:-translate-x-10 transition-all duration-500">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                          </svg>
+                        </div>
+                      </Link>
                     </div>
                   </div>
 

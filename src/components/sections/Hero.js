@@ -64,7 +64,7 @@ export default function Hero() {
 
         {/* Dual CTA */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mt-4">
-            <Button href="#contact" variant="primary" size="lg" className="w-full sm:w-auto min-w-[240px] text-lg py-5 shadow-[0_20px_50px_-15px_rgba(183,115,128,0.4)] hover:shadow-[0_25px_60px_-10px_rgba(183,115,128,0.6)] transition-all duration-500 rounded-2xl">
+            <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto min-w-[240px] text-lg py-5 shadow-[0_20px_50px_rgba(183,115,128,0.3)] hover:shadow-[0_25px_60px_rgba(183,115,128,0.5)]">
               Send Pitch Deck
             </Button>
           
