@@ -18,6 +18,7 @@ export async function GET() {
 
     const db = getDb();
     const snapshot = await db.collection("portfolio").get();
+    console.log(`API: Fetched ${snapshot.size} portfolio items from Firestore`);
 
     const data = snapshot.docs.map((doc) => {
       const docData = doc.data();
@@ -25,7 +26,11 @@ export async function GET() {
       return { id: doc.id, ...safeData };
     });
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "no-store, max-age=0",
+      },
+    });
   } catch (error) {
     console.error("Portfolio GET failed:", error);
     return NextResponse.json({ error: "Failed to read data" }, { status: 500 });

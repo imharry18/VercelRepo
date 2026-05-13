@@ -18,7 +18,11 @@ export async function GET() {
     const db = getDb();
     const snapshot = await db.collection("team").get();
     const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "no-store, max-age=0",
+      },
+    });
   } catch (error) {
     console.error("Team GET failed:", error);
     return NextResponse.json({ error: "Failed to read data" }, { status: 500 });

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Card from "@/components/ui/Card";
 import TiltCard from "@/components/ui/TiltCard";
@@ -9,24 +10,30 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 export default function Portfolio({ showHeader = true }) {
   const [portfolio, setPortfolio] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    fetch("/api/portfolio")
-      .then((res) => res.json())
+    fetch(`/api/portfolio?t=${Date.now()}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
       .then((data) => {
         if (Array.isArray(data)) {
           setPortfolio(data);
         } else {
-          console.error("Invalid portfolio response:", data);
-          setPortfolio([]);
+          setError(data.error || "Invalid data format");
         }
+        setPortfolio(data);
         setLoading(false);
       })
       .catch((err) => {
         console.error("Error loading portfolio:", err);
+        setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [pathname]);
 
   return (
     <section id="portfolio" className="relative min-h-[90vh] py-24 overflow-hidden bg-[#fbf6f3] flex flex-col justify-center">
@@ -55,6 +62,11 @@ export default function Portfolio({ showHeader = true }) {
 
         {/* Portfolio Grid (Dynamic Layout) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+          {error && (
+            <div className="col-span-full p-20 text-center bg-red-50 text-red-600 rounded-3xl border border-red-100 font-bold">
+              Failed to load portfolio: {error}
+            </div>
+          )}
           {portfolio.map((company, i) => {
             const total = portfolio.length;
             
@@ -76,7 +88,7 @@ export default function Portfolio({ showHeader = true }) {
 
             return (
               <ScrollReveal 
-                key={i} 
+                key={company.id || i} 
                 delay={i * 0.15}
                 className={`${mdClass} ${lgClass} h-full`}
               >

@@ -18,8 +18,8 @@ export async function POST(request) {
     }
 
     const data = await resend.emails.send({
-      from: '14U Capital <onboarding@resend.dev>', 
-      to: ['Hello@14ucapital.in'], 
+      from: '14U Capital <portal@14ucapital.in>', 
+      to: ['Hello@14ucapital.in', 'Investments@14ucapital.in'], 
       reply_to: email,
       subject: `[Pitch Deck] ${company} - ${name}`,
       html: `

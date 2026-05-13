@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, stagger, useAnimate, useInView } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -10,11 +10,11 @@ export const TextGenerateEffect = ({
   duration = 0.5
 }) => {
   const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, { once: true, margin: "-100px" });
-  let wordsArray = words.split(" ");
+  const isInView = useInView(scope, { margin: "0px 0px -50px 0px", once: true });
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated) {
       animate("span", {
         opacity: 1,
         filter: filter ? "blur(0px)" : "none",
@@ -22,8 +22,20 @@ export const TextGenerateEffect = ({
         duration: duration ? duration : 1,
         delay: stagger(0.2),
       });
+      setHasAnimated(true);
     }
-  }, [isInView, animate, filter, duration]);
+  }, [isInView, animate, filter, duration, hasAnimated]);
+
+  // Fail-safe
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!hasAnimated) {
+        animate("span", { opacity: 1, filter: "none" }, { duration: 0.5 });
+        setHasAnimated(true);
+      }
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [hasAnimated, animate]);
 
   const renderWords = () => {
     return (
